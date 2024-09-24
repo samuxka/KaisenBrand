@@ -1,0 +1,53 @@
+@font-face {
+    font-family: montserrat;
+    src: url('./assets/Fonts/MONTSERRAT-REGULAR.TTF');
+}
+
+@font-face {
+    font-family: montserrat-extrabold;
+    src: url('./assets/Fonts/MONTSERRAT-EXTRABOLD.TTF');
+}
+
+@font-face {
+    font-family: montserrat-bold;
+    src: url('./assets/Fonts/MONTSERRAT-BOLD.TTF');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: montserrat;
+}
+
+:root{
+    --black: #161816;
+    --text-hover: #fc3838;
+}
+
+.empty{
+    width: 20%;
+    height: auto;
+}
+
+.content{
+    width: 80%;
+    height: auto;
+    padding: 1.5%;
+    display: flex;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: white;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--text-hover);
+    width: 100%;   /* color of the scroll thumb */     /* roundness of the scroll thumb */
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" id="favicon" href="/src/assets/Imgs/faviconW.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> 
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Kaisen Brand</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      function updateFavicon(){
+        const favicon = document.getElementById('favicon');
+        const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        favicon.href = darkMode ? 'faviconB.png' : 'faviconW.png';
+      }
+      window.onload = updateFavicon;
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon)
+    </script>
+  </body>
+</html>
