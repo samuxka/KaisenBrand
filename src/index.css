@@ -30,12 +30,19 @@
 .empty{
     width: 20%;
     height: auto;
+    background: forestgreen;
 }
 
 .content{
     width: 80%;
     height: auto;
-    padding: 1.5%;
+    /* padding: 1.5%; */
+    display: flex;
+}
+
+section{
+    width: 100%;
+    height: auto;
     display: flex;
 }
 
