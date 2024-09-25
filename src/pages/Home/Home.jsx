@@ -24,6 +24,7 @@ function Home() {
                 <div className="content">
                     <div className="banners">
                         <Swiper
+                            
                             pagination={{ clickable: true }}
                             navigation
                             loop={true}

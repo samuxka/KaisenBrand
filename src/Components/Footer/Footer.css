@@ -3,6 +3,7 @@ footer{
     height: 50vh;
     display: flex;
     background-color: var(--black);
+    padding: 1.5%;
 }
 
 footer .content .menu,

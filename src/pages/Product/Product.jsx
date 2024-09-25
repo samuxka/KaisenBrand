@@ -113,7 +113,7 @@ function Product() {
                                     <p className="products-left">There are 2 products left</p>
                                 </div>
                                 <div className="features">
-                                    <h1>FEATURES</h1>
+                                    <h1>FEATURES:</h1>
                                     <nav>
                                         <ul>
                                             <li>Relaxed fit</li>
@@ -127,45 +127,52 @@ function Product() {
                                 <div className="costumer-reviews">
                                     <div>
                                         <h3>Costumer Reviews</h3>
-                                        {!isReviewing ? (
-                                            <>
-                                                <div>
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <UilStar
-                                                            key={i}
-                                                            size="40"
-                                                            color={i < rating ? "gold" : "gray"}
-                                                            onClick={() => handleStarClick(i + 1)}
+                                        <p>Please rate this product and help us improve</p>
+                                        <div className="review">
+                                            {!isReviewing ? (
+                                                <>
+                                                    <div className="star">
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <UilStar
+                                                                key={i}
+                                                                size="40"
+                                                                color={i < rating ? "gold" : "#9e9e9e"}
+                                                                onClick={() => handleStarClick(i + 1)}
+                                                                cursor='pointer'
+                                                                />
+                                                            ))}
+                                                    </div>
+                                                        <button
+                                                            onClick={handleWriteReview}>
+                                                            Write a review
+                                                        </button>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <div>
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <UilStar 
+                                                                key={i}
+                                                                size="40"
+                                                                color={i < rating ? "gold" : "gray"}
+                                                                onClick={() => handleStarClick(i + 1)}
+                                                                cursor='pointer'
                                                             />
                                                         ))}
-                                                </div>
+                                                    </div>
+                                                    <textarea
+                                                        placeholder="Write a review"
+                                                    ></textarea>
                                                     <button
-                                                        onClick={handleWriteReview}>
-                                                        Write a review
-                                                    </button>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <div>
-                                                    {[...Array(5)].map((_, i) => (
-                                                        <UilStar 
-                                                            key={i}
-                                                            size="40"
-                                                            color={i < rating ? "gold" : "gray"}
-                                                            onClick={() => handleStarClick(i + 1)}
-                                                        />
-                                                    ))}
-                                                </div>
-                                                <textarea
-                                                    placeholder="Write a review"
-                                                ></textarea>
-                                                <button
-                                                    onClick={handleSubmitReview}
-                                                >Submit review</button>
-                                            </>
-                                        )}
+                                                        onClick={handleSubmitReview}
+                                                    >Submit review</button>
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
-                                    <a href="#"><i className="uil uil-share-alt"></i> Share this product</a>
+                                    <div className="share">
+                                        <a href="#"><i className="uil uil-share-alt"></i> Share this product</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -206,6 +213,88 @@ function Product() {
                                     </SwiperSlide>    
                                 </Swiper>
                             </div>
+                        </div>
+                    </div>
+                    <div className="more-content">
+                        <div className="header">
+                            <h3>You might also like these</h3>
+                        </div>
+                        <div className="other-products">
+                            <Swiper
+                                // spaceBetween={10}
+                                pagination={{ clickable: true }}
+                                navigation
+                                loop={true}
+                                grabCursor={true}
+                                modules={[Pagination]}
+                                slidesPerView={4.1}
+                            >
+                                <SwiperSlide>
+                                    <div className="also-prducts__card">
+                                        <Link to='/Product'>
+                                            <div className="img">
+                                                <img src={Image1} alt="" />
+                                            </div>
+                                            <div className="info">
+                                                <h1>Oni Tee</h1>
+                                                <p>$29.99</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="also-prducts__card">
+                                        <Link to='/Product'>
+                                            <div className="img">
+                                                <img src={Image1} alt="" />
+                                            </div>
+                                            <div className="info">
+                                                <h1>Oni Tee</h1>
+                                                <p>$29.99</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="also-prducts__card">
+                                        <Link to='/Product'>
+                                            <div className="img">
+                                                <img src={Image1} alt="" />
+                                            </div>
+                                            <div className="info">
+                                                <h1>Oni Tee</h1>
+                                                <p>$29.99</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="also-prducts__card">
+                                        <Link to='/Product'>
+                                            <div className="img">
+                                                <img src={Image1} alt="" />
+                                            </div>
+                                            <div className="info">
+                                                <h1>Oni Tee</h1>
+                                                <p>$29.99</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className="also-prducts__card">
+                                        <Link to='/Product'>
+                                            <div className="img">
+                                                <img src={Image1} alt="" />
+                                            </div>
+                                            <div className="info">
+                                                <h1>Oni Tee</h1>
+                                                <p>$29.99</p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
                     </div>
                 </div>
