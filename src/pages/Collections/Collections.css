@@ -1,0 +1,119 @@
+.collections{
+    width: 100%;
+    height: auto;
+    /* display: flex; */
+}
+
+.collections .empty{
+    width: 20%;
+}
+
+.collections .content{
+    padding: 1.5%;
+    flex-direction: column;
+}
+
+.collections .content .header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.collections .content .header h3,
+.collections .content .header a{
+    font-size: 1rem;
+    font-weight: 200;
+    color: var(--black);
+    transition: .2s;
+}
+
+.collections .content .header h3{
+    color: #999;
+}
+
+.collections .content .header a:hover{
+    color: var(--text-hover);
+}
+
+.collections .content .header h1{
+    font-size: 2rem;
+    font-family: montserrat-bold;
+    letter-spacing: 1px;
+}
+
+.collections .content .banner__content{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.collections .content .banner__content .banner__content-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item{
+    width: 700px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item .banner-item__link{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item .banner-item__header{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    transition: transform .5s ease-in-out;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item .banner-item__title span:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item:hover .banner-item__title span:after{
+    background-color: white;
+    transform: scaleX(1);
+    transition: transform 0.2s linear;
+}
+
+.collections .content .banner__content .banner-content-cards  .banner-item__title span{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item .banner-item__background{
+    position: relative;
+    overflow: hidden;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item .banner-item__background img{
+    width: 100%;
+    height: auto;
+    filter: brightness(0.5);
+    transition: transform .5s ease;
+}
+
+.collections .content .banner__content .banner__content-cards .banner-item:hover .banner-item__background img {
+    transform: scale(1.1); /* Aumenta a escala da imagem no hover */
+}

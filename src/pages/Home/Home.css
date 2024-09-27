@@ -186,7 +186,7 @@
     font-weight: bold;
 }
 
-.collection-item_background{
+.collection-item__background{
     position: relative;
     overflow: hidden;
 }
