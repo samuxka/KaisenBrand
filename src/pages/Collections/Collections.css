@@ -70,8 +70,8 @@
 
 .collections .content .banner__content .banner__content-cards .banner-item .banner-item__header{
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 45%;
+    left: 45%;
     z-index: 2;
     transition: transform .5s ease-in-out;
 }
@@ -95,7 +95,7 @@
     transition: transform 0.2s linear;
 }
 
-.collections .content .banner__content .banner-content-cards  .banner-item__title span{
+.collections .content .banner__content .banner-content-cards .banner-item__header .banner-item__title span{
     font-size: 2rem;
     text-transform: uppercase;
     color: white;
