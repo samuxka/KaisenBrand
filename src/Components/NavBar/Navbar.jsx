@@ -41,7 +41,9 @@ function Navbar() {
                         <Link to='/'><img src={Logo} />  </Link>
                     </div>
                     <div className="bag">
-                        <i className="uil uil-shopping-bag"></i>
+                        <Link to='/Cart'>
+                            <i className="uil uil-shopping-bag"></i>
+                        </Link>
                     </div>
                 </div>
                 <nav>
@@ -50,7 +52,7 @@ function Navbar() {
                         <li><Link to='/Kimonos'>KIMONOS <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/NoGi'>NO GI <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/Apparel'>APPAREL <i className="uil uil-angle-right-b"></i></Link></li>
-                        <li><Link to='/Accessories'>ACCESSORIES <i className="uil uil-angle-right-b"></i></Link></li>
+                        <li><Link to='/Categories'>CATEGORIES <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/Collections'>COLLECTIONS <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/Login' className='login'>LOGIN</Link></li>
                     </ul>

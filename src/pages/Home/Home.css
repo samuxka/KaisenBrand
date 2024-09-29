@@ -202,16 +202,6 @@
     transform: scale(1.1); /* Aumenta a escala da imagem no hover */
 }
 
-.categorie-bot{
-    display: flex;
-    gap: 2.5px;
-}
-
-.collection2,
-.collection3{
-    width: 50%;
-}
-
 .banners-bottom{
     width: 100%;
     padding: 10px 1.5%;
@@ -262,6 +252,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    margin-bottom: 1%;
 }
 
 .banners-bottom .banner-item .banner-item__background img{

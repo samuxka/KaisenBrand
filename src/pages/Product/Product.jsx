@@ -4,10 +4,12 @@ import Navbar from "../../Components/NavBar/Navbar"
 import { UilStar } from '@iconscout/react-unicons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import Image1 from './imgs/OniTee.jpg'
 
 import './Product.css'
 import { useState } from "react"
+
+import { useParams } from "react-router-dom";
+import produtos from '../../produtos'
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
@@ -57,6 +59,13 @@ function Product() {
         setColor(event.target.value);
     };
 
+    const { id } = useParams()
+    const produto = produtos.find((item) => item.id === parseInt(id))
+
+    if(!produto){
+        return <div>Produto não encontrado!</div>
+    }
+
     return(
         <>
             <Navbar />
@@ -66,12 +75,12 @@ function Product() {
                     <div className="product-area">
                         <div className="product-area__info">
                             <div className="product-area__info_url">
-                                <h3><Link to='/'>Home</Link> / <Link to='/Collections'>Collections</Link> / <Link to='/Apparel'>Apparel</Link> / Oni Tee</h3>
+                                <h3><Link to='/'>Home</Link> / <Link to='/Collections'>Collections</Link> / <Link to='/Apparel'>Apparel</Link> / {produto.nome}</h3>
                             </div>
                             <div className="product-area__info_head">
                                 <div className="product-area__info_head-header">
-                                    <h1>Oni Tee</h1>
-                                    <p>$ 29.99</p>
+                                    <h1>{produto.nome}</h1>
+                                    <p>$ {produto.preco}</p>
                                 </div>
                                 <div className="size-selector">
                                     <label htmlFor="size">SIZE</label>
@@ -116,10 +125,10 @@ function Product() {
                                     <h1>FEATURES:</h1>
                                     <nav>
                                         <ul>
-                                            <li>Relaxed fit</li>
-                                            <li>Super soft ring spun cotton</li>
-                                            <li>Screen printed design</li>
-                                            <li>Kaisen Brand original design</li>
+                                            <li>{produto.feature1}</li>
+                                            <li>{produto.feature2}</li>
+                                            <li>{produto.feature3}</li>
+                                            <li>{produto.feature4}</li>
                                         </ul>
                                     </nav>
                                     <p><span>Material:</span> 100% combed ring-spun cotton</p>
@@ -188,27 +197,27 @@ function Product() {
                                 >
                                     <SwiperSlide>
                                         <div className="image">
-                                            <img src={Image1} />
+                                            <img src={produto.imagem} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="image">
-                                            <img src={Image1} />
+                                            <img src={produto.imagem} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="image">
-                                            <img src={Image1} />
+                                            <img src={produto.imagem} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="image">
-                                            <img src={Image1} />
+                                            <img src={produto.imagem} />
                                         </div>
                                     </SwiperSlide>
                                     <SwiperSlide>
                                         <div className="image">
-                                            <img src={Image1} />
+                                            <img src={produto.imagem} />
                                         </div>
                                     </SwiperSlide>    
                                 </Swiper>
@@ -221,7 +230,7 @@ function Product() {
                         </div>
                         <div className="other-products">
                             <Swiper
-                                // spaceBetween={10}
+                                spaceBetween={350}
                                 pagination={{ clickable: true }}
                                 navigation
                                 loop={true}
@@ -229,71 +238,27 @@ function Product() {
                                 modules={[Pagination]}
                                 slidesPerView={4.1}
                             >
-                                <SwiperSlide>
-                                    <div className="also-prducts__card">
-                                        <Link to='/Product'>
-                                            <div className="img">
-                                                <img src={Image1} alt="" />
-                                            </div>
-                                            <div className="info">
-                                                <h1>Oni Tee</h1>
-                                                <p>$29.99</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="also-prducts__card">
-                                        <Link to='/Product'>
-                                            <div className="img">
-                                                <img src={Image1} alt="" />
-                                            </div>
-                                            <div className="info">
-                                                <h1>Oni Tee</h1>
-                                                <p>$29.99</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="also-prducts__card">
-                                        <Link to='/Product'>
-                                            <div className="img">
-                                                <img src={Image1} alt="" />
-                                            </div>
-                                            <div className="info">
-                                                <h1>Oni Tee</h1>
-                                                <p>$29.99</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="also-prducts__card">
-                                        <Link to='/Product'>
-                                            <div className="img">
-                                                <img src={Image1} alt="" />
-                                            </div>
-                                            <div className="info">
-                                                <h1>Oni Tee</h1>
-                                                <p>$29.99</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <div className="also-prducts__card">
-                                        <Link to='/Product'>
-                                            <div className="img">
-                                                <img src={Image1} alt="" />
-                                            </div>
-                                            <div className="info">
-                                                <h1>Oni Tee</h1>
-                                                <p>$29.99</p>
-                                            </div>
-                                        </Link>
-                                    </div>
-                                </SwiperSlide>
+                                {produtos
+                                    .filter((item) => item.id !== produto.id)
+                                    .slice(0, 5)
+                                    .map((item) => (
+                                        <>
+                                            <SwiperSlide key={item.id}>
+                                                <div className="also-prducts__card">
+                                                    <Link to={`/Product/${item.id}`}>
+                                                        <div className="img">
+                                                            <img src={item.imagem} alt="" />
+                                                        </div>
+                                                        <div className="info">
+                                                            <h1>{item.nome}</h1>
+                                                            <p>${item.preco}</p>
+                                                        </div>
+                                                    </Link>
+                                                </div>
+                                            </SwiperSlide>
+                                        </>
+                                    ))   
+                                }
                             </Swiper>
                         </div>
                     </div>

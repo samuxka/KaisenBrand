@@ -9,11 +9,9 @@ import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 
 import { Link } from "react-router-dom"
-import OniTee from '../Product/imgs/OniTee.jpg'
-import Categorie1 from '../Product/imgs/categorie1.jpg'
-import Categorie2 from '../Product/imgs/categorie2.jpg'
-import Categorie3 from '../Product/imgs/categorie3.jpg'
+import produtos from '../../produtos'
 import Footer from "../../Components/Footer/Footer"
+import colecoes from "../../colecoes"
 
 function Home() {
     return(
@@ -65,192 +63,65 @@ function Home() {
                     </div>
                     <div className="products">
                         <div className="products_top">
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
+                            {produtos
+                            .slice(0, 4)
+                            .map((produto) => (
+                                <div className="card" key={produto.id}>
+                                    <Link to={`/Product/${produto.id}`}>
+                                        <div className="img">
+                                            <img src={produto.imagem} alt={produto.nome} />
+                                        </div>
+                                        <div className="info">
+                                            <h1>{produto.nome}</h1>
+                                            <p>${produto.preco.toFixed(2)}</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className="categories">
-                        <div className="collection-item collectio1">
-                            <Link className="collection-item__link" title="APPAREL">
-                                <div className="collection-item__header">
-                                    <h3 className="collection-item__title">
-                                        <span>APPAREL</span>
-                                    </h3>
-                                </div>
-                                <div className="collection-item__background">
-                                    <figure className="lazy-image">
-                                        <img src={Categorie1} className="img" />
-                                    </figure>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="categorie-bot">
-                            <div className="collection-item collection2">
-                                <Link className="collection-item__link" title="APPAREL">
+                        {colecoes
+                        .slice(0,3)
+                        .map((colecao) => (
+                            <div className="collection-item collectio1" key={colecao.id}>
+                                <Link className="collection-item__link" to={`/Collections/${colecao.id}`}>
                                     <div className="collection-item__header">
                                         <h3 className="collection-item__title">
-                                            <span>MENs KIMONOS</span>
+                                            <span>{colecao.nome}</span>
                                         </h3>
                                     </div>
                                     <div className="collection-item__background">
                                         <figure className="lazy-image">
-                                            <img src={Categorie2} className="img" />
+                                            <img src={colecao.imagem} className="img" />
                                         </figure>
                                     </div>
                                 </Link>
                             </div>
-                            <div className="collection-item collection3">
-                                <Link className="collection-item__link" title="APPAREL">
-                                    <div className="collection-item__header">
-                                        <h3 className="collection-item__title">
-                                            <span>WOMENs KIMONO</span>
-                                        </h3>
-                                    </div>
-                                    <div className="collection-item__background">
-                                        <figure className="lazy-image">
-                                            <img src={Categorie3} className="img" />
-                                        </figure>
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                     <div className="cabecario">
-                        <h1>MENS KIMONOS</h1>
+                        <h1>KIMONOS</h1>
                         <Link to='/Kimonos'>View all products</Link>
                     </div>
                     <div className="products">
                         <div className="products_top">
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="card">
-                                <Link to='/Product'>
-                                    <div className="img">
-                                        <img src={OniTee} alt="" />
-                                    </div>
-                                    <div className="info">
-                                        <h1>Oni Tee</h1>
-                                        <p>$29.99</p>
-                                    </div>
-                                </Link>
-                            </div>
+                            {produtos
+                            .filter(produto => produto.categoria === "kimono")
+                            .slice(0, 4)
+                            .map((produto) => (
+                                <div className="card" key={produto.id}>
+                                    <Link to={`/Product/${produto.id}`}>
+                                        <div className="img">
+                                            <img src={produto.imagem} alt={produto.nome} />
+                                        </div>
+                                        <div className="info">
+                                            <h1>{produto.nome}</h1>
+                                            <p>${produto.preco.toFixed(2)}</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                            ))}
                         </div>
                     </div>
                     <div className="banners-bottom">

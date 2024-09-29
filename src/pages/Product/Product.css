@@ -32,9 +32,11 @@
 
 .product-area__info_url h3{
     color: #9e9e9e;
+    font-size: 1rem;
 }
 
 .product-area__info_url h3 a{
+    font-size: 1rem;
     color: var(--black);
     transition: .2s;
 }
@@ -327,15 +329,19 @@
 }
 
 .content .more-content .other-products {
+    width: 100%;
     height: 55vh;
     display: flex;    
 }
 
 .content .more-content .other-products .also-prducts__card {
     width: 300px;
+
 }
 
 .content .more-content .other-products .also-prducts__card .img{
+    width: 100%;
+    height: auto;
     position: relative;
     overflow: hidden;
     margin-bottom: 5px;
@@ -343,7 +349,6 @@
 
 .content .more-content .other-products .also-prducts__card img{
     width: 100%;
-    height: auto;
     transition: transform .5s ease;
 }
 
