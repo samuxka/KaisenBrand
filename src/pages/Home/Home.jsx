@@ -9,9 +9,9 @@ import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 
 import { Link } from "react-router-dom"
-import produtos from '../../produtos'
+import produtos from '../../data/produtos'
 import Footer from "../../Components/Footer/Footer"
-import colecoes from "../../colecoes"
+import colecoes from "../../data/colecoes"
 
 function Home() {
     return(

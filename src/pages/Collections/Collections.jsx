@@ -3,7 +3,7 @@ import Navbar from '../../Components/NavBar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import { Link } from 'react-router-dom'
 
-import colecoes from '../../colecoes'
+import colecoes from '../../data/colecoes'
 
 function Collections() {
     return(

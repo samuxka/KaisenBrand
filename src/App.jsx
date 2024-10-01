@@ -13,6 +13,7 @@ import Product from './pages/Product/Product'
 import Categories from './pages/Categories/Categories'
 import Cart from './pages/Cart/Cart'
 import CollectionPage from './pages/Collections/CollectionPage/CollectionPage'
+import CategoriePage from './pages/Categories/CategoriePage/CategoriePage'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path='/Collections' element={<Collections />}></Route>
             <Route path='/Collections/:collectionId' element={<CollectionPage/>}></Route>
             <Route path='/Categories' element={<Categories />}></Route>
+            <Route path='/Categories/:categorieId' element={<CategoriePage />}></Route>
             <Route path='/Login' element={<Login />}></Route>
             <Route path='/Product/:id' element={<Product />}></Route>
             <Route path='/Cart' element={<Cart />}></Route>

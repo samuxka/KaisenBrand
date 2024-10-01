@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
-import colecoes from '../../../colecoes'; // Ajuste o caminho conforme necessário
 import Navbar from '../../../Components/NavBar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import { Link } from 'react-router-dom';
-import produtos from '../../../produtos';
+import produtos from '../../../data/produtos';
+import colecoes from '../../../data/colecoes';
 
 import './CollectionPage.css'
 

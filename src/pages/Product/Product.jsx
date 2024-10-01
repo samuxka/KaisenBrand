@@ -9,7 +9,7 @@ import './Product.css'
 import { useState } from "react"
 
 import { useParams } from "react-router-dom";
-import produtos from '../../produtos'
+import produtos from '../../data/produtos'
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'

@@ -1,14 +1,14 @@
-import SakuraTee from './assets/Imgs/produtos/sakuratee.jpg'
-import TempleTee from './assets/Imgs/produtos/templetee.jpg'
-import SamuraiTee from './assets/Imgs/produtos/samuraitee.jpg'
-import CarpHoodie from './assets/Imgs/produtos/carphoodie.jpg'
-import KimonoBlack from './assets/Imgs/produtos/KimonoB.jpg'
+import SakuraTee from '../assets/Imgs/produtos/sakuratee.jpg'
+import TempleTee from '../assets/Imgs/produtos/templetee.jpg'
+import SamuraiTee from '../assets/Imgs/produtos/samuraitee.jpg'
+import CarpHoodie from '../assets/Imgs/produtos/carphoodie.jpg'
+import KimonoBlack from '../assets/Imgs/produtos/KimonoB.jpg'
 
 const produtos = [
   // Start Tee categorie
   {
     id: 1,
-    nome: "Sakura Tee 1",
+    nome: "Sakura Tee",
     preco: 29.99,
     feature1: "Relaxed fit",
     feature2: "Super soft ring spun cotton",
@@ -297,6 +297,51 @@ const produtos = [
     categoria: "nogi",
     colecao: "carp"
   },
+  {
+    id: 25,
+    nome: "Belt - kid",
+    preco: 50.20,
+    feature1: "Relaxed fit",
+    feature2: "Super soft ring spun cotton",
+    feature3: "Screen printed design",
+    feature4: "Kaisen Brand original design",
+    imagem: KimonoBlack,
+    categoria: "nogi",
+  },
+  {
+    id: 26,
+    nome: "Belt - Adult",
+    preco: 70.50,
+    feature1: "Relaxed fit",
+    feature2: "Super soft ring spun cotton",
+    feature3: "Screen printed design",
+    feature4: "Kaisen Brand original design",
+    imagem: KimonoBlack,
+    categoria: "nogi",
+
+  },
+  {
+    id: 27,
+    nome: "Belt - Teacher",
+    preco: 100.00,
+    feature1: "Relaxed fit",
+    feature2: "Super soft ring spun cotton",
+    feature3: "Screen printed design",
+    feature4: "Kaisen Brand original design",
+    imagem: KimonoBlack,
+    categoria: "nogi",
+  },
+  {
+    id: 28,
+    nome: "Belt - Competition",
+    preco: 150.00,
+    feature1: "Relaxed fit",
+    feature2: "Super soft ring spun cotton",
+    feature3: "Screen printed design",
+    feature4: "Kaisen Brand original design",
+    imagem: KimonoBlack,
+    categoria: "nogi",
+  }
 ]
 
 export default produtos;
