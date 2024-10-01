@@ -1,0 +1,24 @@
+.newArrival{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.newArrival .empty{
+    width: 20%;
+}
+
+.newArrival .content{
+    width: 80%;
+    height: auto;
+}
+
+.newArrival .content .product-content{
+    width: 100%;
+    padding: 1.5%;
+}
+
+.newArrival .content .apparel-area__content .apparel-area__content-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}

@@ -1,7 +1,7 @@
 import SakuraTee from '../assets/Imgs/produtos/sakuratee.jpg'
 import TempleTee from '../assets/Imgs/produtos/templetee.jpg'
 import SamuraiTee from '../assets/Imgs/produtos/samuraitee.jpg'
-import CarpHoodie from '../assets/Imgs/produtos/carphoodie.jpg'
+import CarpHoodie from '../assets/Imgs/produtos/carpHoodie.jpg'
 import KimonoBlack from '../assets/Imgs/produtos/KimonoB.jpg'
 
 const produtos = [
@@ -15,7 +15,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: SakuraTee,
-    categoria: "apparel",
+    categoria: "Apparel",
     colecao: "sakura"
   },
   {
@@ -27,7 +27,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: TempleTee,
-    categoria: "apparel",
+    categoria: "Apparel",
     colecao: "temple"
   },
   {
@@ -39,7 +39,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: SamuraiTee,
-    categoria: "apparel",
+    categoria: "Apparel",
     colecao: "samurai"
   },
   {
@@ -51,7 +51,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: SamuraiTee,
-    categoria: "apparel",
+    categoria: "Apparel",
     colecao: "countries"
   },
   {
@@ -63,7 +63,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: SamuraiTee,
-    categoria: "apparel",
+    categoria: "Apparel",
     colecao: "states"
   },
   {
@@ -75,7 +75,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: SamuraiTee,
-    categoria: "apparel",
+    categoria: "Apparel",
     colecao: "carp"
   },
   // Start Hoodie categorie
@@ -88,7 +88,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: CarpHoodie,
-    categoria: "hoodie",
+    categoria: "Hoodie",
     colecao: "sakura"
   },
   {
@@ -100,7 +100,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: CarpHoodie,
-    categoria: "hoodie",
+    categoria: "Hoodie",
     colecao: "temple"
   },
   {
@@ -112,7 +112,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: CarpHoodie,
-    categoria: "hoodie",
+    categoria: "Hoodie",
     colecao: "samurai"
   },
   {
@@ -124,7 +124,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: CarpHoodie,
-    categoria: "hoodie",
+    categoria: "Hoodie",
     colecao: "countries"
   },
   {
@@ -136,7 +136,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: CarpHoodie,
-    categoria: "hoodie",
+    categoria: "Hoodie",
     colecao: "states"
   },
   {
@@ -148,7 +148,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: CarpHoodie,
-    categoria: "hoodie",
+    categoria: "Hoodie",
     colecao: "carp"
   },
   // Start Kimono Categorie
@@ -161,7 +161,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "kimono",
+    categoria: "Kimono",
     colecao: "sakura"
   },
   {
@@ -173,7 +173,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "kimono",
+    categoria: "Kimono",
     colecao: "temple"
   },
   {
@@ -185,7 +185,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "kimono",
+    categoria: "Kimono",
     colecao: "samurai"
   },
   {
@@ -197,7 +197,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "kimono",
+    categoria: "Kimono",
     colecao: "countries"
   },
   {
@@ -209,7 +209,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "kimono",
+    categoria: "Kimono",
     colecao: "states"
   },
   {
@@ -221,10 +221,10 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "kimono",
+    categoria: "Kimono",
     colecao: "carp"
   },
-  // Start NoGi categorie
+  // Start Nogi categorie
   {
     id: 19,
     nome: "Sakura No-Gi",
@@ -234,7 +234,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Nogi",
     colecao: "sakura"
   },
   {
@@ -246,7 +246,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Nogi",
     colecao: "temple"
   },
   {
@@ -258,7 +258,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Nogi",
     colecao: "samurai"
   },
   {
@@ -270,7 +270,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Nogi",
     colecao: "countries"
   },
   {
@@ -282,7 +282,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Nogi",
     colecao: "states"
   },
   {
@@ -294,7 +294,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Nogi",
     colecao: "carp"
   },
   {
@@ -306,7 +306,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Belts",
   },
   {
     id: 26,
@@ -317,7 +317,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Belts",
 
   },
   {
@@ -329,7 +329,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Belts",
   },
   {
     id: 28,
@@ -340,7 +340,7 @@ const produtos = [
     feature3: "Screen printed design",
     feature4: "Kaisen Brand original design",
     imagem: KimonoBlack,
-    categoria: "nogi",
+    categoria: "Belts",
   }
 ]
 

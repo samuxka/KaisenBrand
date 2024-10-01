@@ -75,7 +75,7 @@ function Product() {
                     <div className="product-area">
                         <div className="product-area__info">
                             <div className="product-area__info_url">
-                                <h3><Link to='/'>Home</Link> / <Link to='/Collections'>Collections</Link> / <Link to='/Apparel'>Apparel</Link> / {produto.nome}</h3>
+                                <h3><Link to='/'>Home</Link> / <Link to='/Categories'>Categorie</Link> / <Link to={`/Categories/${produto.categoria}`}>{produto.categoria}</Link> / {produto.nome}</h3>
                             </div>
                             <div className="product-area__info_head">
                                 <div className="product-area__info_head-header">
@@ -239,7 +239,7 @@ function Product() {
                                 slidesPerView={4.1}
                             >
                                 {produtos
-                                    .filter((item) => item.id !== produto.id)
+                                    .filter((item) => item.id !== produto.id && item.categoria === produto.categoria)
                                     .slice(0, 5)
                                     .map((item) => (
                                         <>

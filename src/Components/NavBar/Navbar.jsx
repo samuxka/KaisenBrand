@@ -8,7 +8,7 @@ function Navbar() {
         const header = document.querySelector("header")
         const menu = document.querySelector("#menu-icon")
         const navlist = document.querySelector(".navlist")
-
+       
         const handleMenuClick = () =>{
             if (header && menu && navlist){
                 header.classList.toggle('head')
@@ -46,19 +46,19 @@ function Navbar() {
                         </Link>
                     </div>
                 </div>
-                <nav>
+                <nav className='list'>
                     <ul className='navlist'>
                         <li><Link to='/NewArrivals'>NEW ARRIVALS</Link></li>
-                        <li><Link to='/Kimonos'>KIMONOS <i className="uil uil-angle-right-b"></i></Link></li>
-                        <li><Link to='/NoGi'>NO GI <i className="uil uil-angle-right-b"></i></Link></li>
-                        <li><Link to='/Apparel'>APPAREL <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/Categories'>CATEGORIES <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/Collections'>COLLECTIONS <i className="uil uil-angle-right-b"></i></Link></li>
                         <li><Link to='/Login' className='login'>LOGIN</Link></li>
                     </ul>
                 </nav>
                 <div className="search-container">
-                    <input type="text" placeholder="Search..."/>
+                    <input 
+                        type="text" 
+                        placeholder="Search..."
+                    />
                     <div className="search-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
                             <path fill="none" stroke="#161816" strokeWidth="2" d="M10,18 C14.418278,18 18,14.418278 18,10 C18,5.581722 14.418278,2 10,2 C5.581722,2 2,5.581722 2,10 C2,14.418278 5.581722,18 10,18 Z M22,22 L16,16"/>

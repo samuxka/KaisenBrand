@@ -102,12 +102,12 @@ function Home() {
                     </div>
                     <div className="cabecario">
                         <h1>KIMONOS</h1>
-                        <Link to='/Kimonos'>View all products</Link>
+                        <Link to='/Categories/Kimono'>View all products</Link>
                     </div>
                     <div className="products">
                         <div className="products_top">
                             {produtos
-                            .filter(produto => produto.categoria === "kimono")
+                            .filter(produto => produto.categoria === "Kimono")
                             .slice(0, 4)
                             .map((produto) => (
                                 <div className="card" key={produto.id}>
