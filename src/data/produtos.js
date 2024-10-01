@@ -1,8 +1,8 @@
 import SakuraTee from '../assets/Imgs/produtos/sakuratee.jpg'
 import TempleTee from '../assets/Imgs/produtos/templetee.jpg'
 import SamuraiTee from '../assets/Imgs/produtos/samuraitee.jpg'
-import CarpHoodie from '../assets/Imgs/produtos/carpHoodie.jpg'
-import KimonoBlack from '../assets/Imgs/produtos/KimonoB.jpg'
+import CarpHoodie from '../assets/Imgs/produtos/carphoodie.jpg'
+import KimonoBlack from '../assets/Imgs/produtos/kimonoB.jpg'
 
 const produtos = [
   // Start Tee categorie
