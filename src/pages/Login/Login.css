@@ -1,0 +1,235 @@
+.login-page{
+    width: 100%;
+    height: 100vh;
+    background: var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__container{
+    width: 70%;
+    height: 70%;
+    border-radius: 18px;
+    background: var(--black);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 0 50px 3px var(--black);
+}
+
+.login__container-right,
+.login__container-left{
+    width: 50%;
+    height: 100%;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.container__right-content,
+.container__left-content{
+    width: 100%;
+    height: 100%;
+}
+
+.container__right-content{
+    background-image: url(../../assets/Imgs/login.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.container__right-content-head{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+.content__head-right,
+.content__head-left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content__head-right img{
+    width: 250px;
+    filter: invert(1);
+}
+
+.content__head-left a{
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.container__left-content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.container__left-content-head,
+.container__left-content-middle,
+.container__left-content-bottom{
+    width: 100%;
+}
+
+.container__left-content-head{
+    height: 50%;
+    padding: 5% 0 0 0;
+}
+
+.container__left-content-head h1{
+    color: var(--white);
+    font-size: 3rem;
+    font-family: montserrat-bold;
+    margin-bottom: 10px;
+}
+
+.container__left-content-head p{
+    color: var(--white);
+}
+
+.container__left-content-head p a{
+    text-decoration: underline;
+    color: var(--text-hover);
+}
+
+.container__left-content-middle{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+.container__left-content-middle .name{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.container__left-content-middle input:focus,
+.container__left-content-middle .name input:focus{
+    border: 2px solid var(--text-hover);
+}
+
+.container__left-content-middle input{
+    width: 100%;
+    height: 50px;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin: 5px 0;
+    background: #242424;
+    color: var(--white);
+}
+
+.container__left-content-middle p{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.container__left-content-middle p input{
+    width: 20px;
+    cursor: pointer;
+}
+
+.container__left-content-middle p span{
+    color: var(--white);
+}
+
+.container__left-content-middle p span a{
+    color: var(--text-hover);
+    text-decoration: underline;
+}
+
+.container__left-content-middle .form-btn{
+    margin: 10px 0;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: var(--text-hover);
+    color: var(--white);
+    letter-spacing: 1px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.container__left-content-middle .form-btn:hover{
+    background: #c72c2c;
+}
+
+
+.container-line{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-line p{
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    color: var(--grey);
+}
+
+.container-line .right-line,
+.container-line .left-line{
+    width: 100%;
+    height: 0.2rem;
+    background: var(--grey);
+    border-radius: 5px;
+}
+
+.container__left-content-bottom{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.container__left-content-bottom a{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid var(--grey);
+    color: var(--grey);
+    font-size: 1rem;
+}
+
+.container__left-content-bottom a img{
+    margin: 0 10px 0 0;
+    height: 100%;
+}
+
+.container__left-content-bottom a .icon-apple{
+    height: 30px;
+    filter: invert(1);
+}

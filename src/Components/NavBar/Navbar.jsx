@@ -1,6 +1,7 @@
 import Logo from '../../assets/Imgs/logo.png'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import { ShoppingBasket } from 'lucide-react'
 import { useEffect } from 'react'
 
 function Navbar() {
@@ -42,7 +43,7 @@ function Navbar() {
                     </div>
                     <div className="bag">
                         <Link to='/Cart'>
-                            <i className="uil uil-shopping-bag"></i>
+                            <ShoppingBasket />
                         </Link>
                     </div>
                 </div>

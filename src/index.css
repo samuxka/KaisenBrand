@@ -24,7 +24,9 @@
 
 :root{
     --black: #161816;
+    --white: #f0f8ff;
     --text-hover: #fc3838;
+    --grey: #cccccc;
 }
 
 .empty{
