@@ -1,6 +1,6 @@
 import Navbar from "../../Components/NavBar/Navbar"
 import Banner1 from '../../assets/Imgs/banner1.jpg'
-import Banner2 from '../Product/imgs/banner2.jpg'
+import Banner2 from '../../assets/Imgs/banner2.jpg'
 import './Home.css'
 
 import { Swiper, SwiperSlide } from "swiper/react"
