@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
-const Recomendations = ({ relatedProducts }) => {
+const Recomendations = ({ relatedProducts = [] }) => {
+    const [products, setProducts] = useState([]);
+
     console.log('RelatedProducts:', relatedProducts);
-    if (!relatedProducts) return <div>Nenhum produto relacionado encontrado.</div>;
-  
+
+    if (relatedProducts.length === 0) {
+      return <div>Nenhum produto relacionado encontrado.</div>;
+    }
     return (
         <div>
         {relatedProducts?.map((product) => (

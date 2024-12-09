@@ -273,7 +273,7 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendations products={relatedProducts} />
+                    <Recomendations products={relatedProducts || []} />
                 </div>
             </section>
             <Footer />
