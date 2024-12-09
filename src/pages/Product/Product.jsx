@@ -29,7 +29,7 @@ const Product = () => {
     const colorDropdownRef = useRef(null);
     const [relatedProducts, setRelatedProducts] = useState([])
     const collectionId = product.collection_id
-
+    
     const carregarProduto = async () => {
         const { data, error } = await supabase
             .from('products')
@@ -54,9 +54,9 @@ const Product = () => {
             .select('id, name, image_url_front, price')
             .eq('collection_id', collectionId)
 
-        if (error) {
+        if(error){
             console.log(error)
-            return []
+            return[]
         }
         return data
     }
@@ -105,10 +105,10 @@ const Product = () => {
     }, [productId]);
 
     useEffect(() => {
-        if (product?.collection_id) {
-            fetchRelatedProducts(product.collection_id).then((produtos) => setRelatedProducts(produtos));
+        if (product && product.collection_id !== undefined && product.collection_id !== null) {
+          fetchRelatedProducts(product.collection_id).then((produtos) => setRelatedProducts(produtos));
         }
-    }, [product]);
+      }, [product]);
 
     return (
         <>
@@ -273,7 +273,7 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendations products={relatedProducts || []} />
+                    <Recomendations products={relatedProducts}/>
                 </div>
             </section>
             <Footer />
