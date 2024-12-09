@@ -110,6 +110,8 @@ const Product = () => {
         }
       }, [product]);
 
+      
+
     return (
         <>
             <Navbar />
@@ -273,7 +275,7 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendations products={relatedProducts}/>
+                    <Recomendations relatedProducts={relatedProducts}/>
                 </div>
             </section>
             <Footer />
