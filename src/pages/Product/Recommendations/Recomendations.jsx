@@ -1,16 +1,20 @@
 import React from 'react';
 
-const Recomendacoes = () => {
-  return (
-    <div className="more-content">
-        <h3>
-        You might also like these
-        </h3>
-      <div className="recomendacoes">
-
+const Recomendations = ({ relatedProducts }) => {
+    console.log('RelatedProducts:', relatedProducts);
+    if (!relatedProducts) return <div>Nenhum produto relacionado encontrado.</div>;
+  
+    return (
+        <div>
+        {relatedProducts?.map((product) => (
+          <div key={product.id}>
+            <h2>{product.name}</h2>
+            <img src={product.image_url_front} alt={product.name} />
+            <p>{product.price}</p>
+          </div>
+        ))}
       </div>
-    </div>
-  );
-};
+    );
+  };
 
-export default Recomendacoes;
+export default Recomendations;

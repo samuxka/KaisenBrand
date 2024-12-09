@@ -6,7 +6,7 @@ import { useParams, Link } from 'react-router-dom';
 import Navbar from '../../Components/NavBar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import ProductReview from './Reviews/ProductReview';
-import Recomendacoes from './Recommendations/Recomendations';
+import Recomendations from './Recommendations/Recomendations';
 import supabase from '../../data/supabaseClient';
 
 import { ShoppingCart, ChevronDown, ChevronUp, Check } from 'lucide-react';
@@ -27,6 +27,8 @@ const Product = () => {
     const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
     const sizeDropdownRef = useRef(null);
     const colorDropdownRef = useRef(null);
+    const [relatedProducts, setRelatedProducts] = useState([])
+    const collectionId = product.collection_id
 
     const carregarProduto = async () => {
         const { data, error } = await supabase
@@ -36,8 +38,7 @@ const Product = () => {
 
         if (error) console.error(error);
         else setProduct(data[0]);
-    };
-
+    }
     const carregarVariações = async () => {
         const { data, error } = await supabase
             .from('products_variations')
@@ -47,7 +48,18 @@ const Product = () => {
         if (error) console.error(error);
         else setVariations(data);
     };
+    const fetchRelatedProducts = async (collectionId) => {
+        const { data, error } = await supabase
+            .from('products')
+            .select('id, name, image_url_front, price')
+            .eq('collection_id', collectionId)
 
+        if (error) {
+            console.log(error)
+            return []
+        }
+        return data
+    }
     const increment = () => {
         setCount(count + 1)
     }
@@ -58,7 +70,6 @@ const Product = () => {
             alert("A quantidade tem que ser maior que um")
         }
     }
-
     const handleSizeOptionClick = (event) => {
         const label = event.target.dataset.label;
         if (label) {
@@ -66,7 +77,6 @@ const Product = () => {
             setIsSizeDropdownOpen(false);
         }
     };
-
     const handleColorOptionClick = (event) => {
         const label = event.target.dataset.label;
         if (label) {
@@ -94,7 +104,11 @@ const Product = () => {
         };
     }, [productId]);
 
-
+    useEffect(() => {
+        if (product?.collection_id) {
+            fetchRelatedProducts(product.collection_id).then((produtos) => setRelatedProducts(produtos));
+        }
+    }, [product]);
 
     return (
         <>
@@ -259,7 +273,7 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendacoes />
+                    <Recomendations products={relatedProducts} />
                 </div>
             </section>
             <Footer />
