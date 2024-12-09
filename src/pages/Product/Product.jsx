@@ -23,7 +23,6 @@ const Product = () => {
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedSize, setSelectedSize] = useState('');
     const [count, setCount] = useState(1);
-    const [produtosRecomendados, setProdutosRecomendados] = useState([]);
     const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
     const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
     const sizeDropdownRef = useRef(null);
@@ -47,22 +46,6 @@ const Product = () => {
 
         if (error) console.error(error);
         else setVariations(data);
-    };
-
-    const carregarProdutosRecomendados = async () => {
-        if (!product.collection || !productId) return;
-
-        const { data, error } = await supabase
-            .from('products')
-            .select('*')
-            .eq('collection', product.collection)
-            .neq('id', productId);
-
-        if (error) console.error(error);
-        else {
-            console.log(data);
-            setProdutosRecomendados(data);
-        }
     };
 
     const increment = () => {
@@ -95,7 +78,6 @@ const Product = () => {
     useEffect(() => {
         carregarProduto();
         carregarVariações();
-        carregarProdutosRecomendados();
 
         const handleClickOutside = (event) => {
             if (sizeDropdownRef.current && !sizeDropdownRef.current.contains(event.target)) {
@@ -109,9 +91,8 @@ const Product = () => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
-            setProdutosRecomendados([]);
         };
-    }, [productId, product.collection]);
+    }, [productId]);
 
 
 
@@ -278,7 +259,7 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendacoes produtosRecomendados={produtosRecomendados} />
+                    <Recomendacoes />
                 </div>
             </section>
             <Footer />
