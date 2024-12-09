@@ -1,17 +1,20 @@
+import './Product.css'
+
 import React, { useState, useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import supabase from '../../data/supabaseClient';
+import { useParams, Link } from 'react-router-dom';
+
 import Navbar from '../../Components/NavBar/Navbar';
 import Footer from '../../Components/Footer/Footer';
-import { Link } from 'react-router-dom';
 import ProductReview from './Reviews/ProductReview';
-import { ShoppingCart, ChevronDown, ChevronUp, Check } from 'lucide-react';
+import Recomendacoes from './Recommendations/Recomendations';
+import supabase from '../../data/supabaseClient';
 
+import { ShoppingCart, ChevronDown, ChevronUp, Check } from 'lucide-react';
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
-import Recomendacoes from './Recommendations/Recomendations';
+
 
 const Product = () => {
     const { id: productId } = useParams();
@@ -21,7 +24,11 @@ const Product = () => {
     const [selectedSize, setSelectedSize] = useState('');
     const [count, setCount] = useState(1);
     const [produtosRecomendados, setProdutosRecomendados] = useState([]);
-    
+    const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
+    const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
+    const sizeDropdownRef = useRef(null);
+    const colorDropdownRef = useRef(null);
+
     const carregarProduto = async () => {
         const { data, error } = await supabase
             .from('products')
@@ -42,37 +49,22 @@ const Product = () => {
         else setVariations(data);
     };
 
-    const handleColorChange = (color) => {
-        setSelectedColor(color);
-    };
-
     const carregarProdutosRecomendados = async () => {
         if (!product.collection || !productId) return;
 
         const { data, error } = await supabase
-          .from('products')
-          .select('*')
-          .eq('collection', product.collection)
-          .neq('id', productId);
-      
+            .from('products')
+            .select('*')
+            .eq('collection', product.collection)
+            .neq('id', productId);
+
         if (error) console.error(error);
         else {
-          console.log(data); // Verifique se dados estão sendo retornados
-          setProdutosRecomendados(data); // Certifique-se de que essa linha esteja correta
+            console.log(data);
+            setProdutosRecomendados(data);
         }
-      };
+    };
 
-      useEffect(() => {
-        carregarProduto();
-        carregarVariações();
-        carregarProdutosRecomendados(); // Verifique se essa linha está correta
-      }, [productId, product.collection]);
-
-      useEffect(() => {
-        return () => {
-          setProdutosRecomendados([]);
-        };
-      }, []);
     const increment = () => {
         setCount(count + 1)
     }
@@ -83,11 +75,6 @@ const Product = () => {
             alert("A quantidade tem que ser maior que um")
         }
     }
-
-    const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
-    const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
-    const sizeDropdownRef = useRef(null);
-    const colorDropdownRef = useRef(null);
 
     const handleSizeOptionClick = (event) => {
         const label = event.target.dataset.label;
@@ -100,12 +87,16 @@ const Product = () => {
     const handleColorOptionClick = (event) => {
         const label = event.target.dataset.label;
         if (label) {
-          setSelectedColor(label);
-          setIsColorDropdownOpen(false);
+            setSelectedColor(label);
+            setIsColorDropdownOpen(false);
         }
-      };
+    };
 
     useEffect(() => {
+        carregarProduto();
+        carregarVariações();
+        carregarProdutosRecomendados();
+
         const handleClickOutside = (event) => {
             if (sizeDropdownRef.current && !sizeDropdownRef.current.contains(event.target)) {
                 setIsSizeDropdownOpen(false);
@@ -118,8 +109,10 @@ const Product = () => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
+            setProdutosRecomendados([]);
         };
-    }, []);
+    }, [productId, product.collection]);
+
 
 
     return (
@@ -184,7 +177,7 @@ const Product = () => {
                                                 onChange={() => setIsColorDropdownOpen(!isColorDropdownOpen)}
                                             />
                                             <div id="select-button-color">
-                                            <div id="selected-value">{selectedColor || product.color || 'Select Color'}</div>
+                                                <div id="selected-value">{selectedColor || product.color || 'Select Color'}</div>
                                                 <i data-lucide='chevron-down'><ChevronDown /></i>
                                             </div>
                                         </div>
@@ -285,7 +278,7 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendacoes produtosRecomendados={produtosRecomendados} />               
+                    <Recomendacoes produtosRecomendados={produtosRecomendados} />
                 </div>
             </section>
             <Footer />
