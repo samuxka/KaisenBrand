@@ -9,11 +9,27 @@ import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
 
 import { Link } from "react-router-dom"
-import produtos from '../../data/produtos'
 import Footer from "../../Components/Footer/Footer"
-import colecoes from "../../data/colecoes"
+
+import supabase from "../../data/supabaseClient"
+import { useCallback, useState, useEffect } from 'react';
 
 function Home() {
+    const [products, setProducts] = useState([]);
+    const fetchProducts = useCallback(async () => {
+      const { data, error } = await supabase
+        .from('products')
+        .select('*')
+        .limit(10);
+  
+      if (error) console.error(error);
+      else setProducts(data);
+    }, []);
+  
+    useEffect(() => {
+      fetchProducts();
+    }, [fetchProducts]);
+
     return(
         <>
             <Navbar/>
@@ -63,17 +79,17 @@ function Home() {
                     </div>
                     <div className="products">
                         <div className="products_top">
-                            {produtos
+                            {products
                             .slice(0, 4)
-                            .map((produto) => (
-                                <div className="card" key={produto.id}>
-                                    <Link to={`/Product/${produto.id}`}>
+                            .map((product) => (
+                                <div className="card" key={product.id}>
+                                    <Link to={`/Product/${product.id}`}>
                                         <div className="img">
-                                            <img src={produto.imagem} alt={produto.nome} />
+                                            <img src={product.image_url_front} alt={product.name} />
                                         </div>
                                         <div className="info">
-                                            <h1>{produto.nome}</h1>
-                                            <p>${produto.preco.toFixed(2)}</p>
+                                            <h1>{product.name}</h1>
+                                            <p>${product.price}</p>
                                         </div>
                                     </Link>
                                 </div>
@@ -81,48 +97,14 @@ function Home() {
                         </div>
                     </div>
                     <div className="categories">
-                        {colecoes
-                        .slice(0,3)
-                        .map((colecao) => (
-                            <div className="collection-item collectio1" key={colecao.id}>
-                                <Link className="collection-item__link" to={`/Collections/${colecao.id}`}>
-                                    <div className="collection-item__header">
-                                        <h3 className="collection-item__title">
-                                            <span>{colecao.nome}</span>
-                                        </h3>
-                                    </div>
-                                    <div className="collection-item__background">
-                                        <figure className="lazy-image">
-                                            <img src={colecao.imagem} className="img" />
-                                        </figure>
-                                    </div>
-                                </Link>
-                            </div>
-                        ))}
+
                     </div>
                     <div className="cabecario">
                         <h1>KIMONOS</h1>
                         <Link to='/Categories/Kimono'>View all products</Link>
                     </div>
                     <div className="products">
-                        <div className="products_top">
-                            {produtos
-                            .filter(produto => produto.categoria === "Kimono")
-                            .slice(0, 4)
-                            .map((produto) => (
-                                <div className="card" key={produto.id}>
-                                    <Link to={`/Product/${produto.id}`}>
-                                        <div className="img">
-                                            <img src={produto.imagem} alt={produto.nome} />
-                                        </div>
-                                        <div className="info">
-                                            <h1>{produto.nome}</h1>
-                                            <p>${produto.preco.toFixed(2)}</p>
-                                        </div>
-                                    </Link>
-                                </div>
-                            ))}
-                        </div>
+                        
                     </div>
                     <div className="banners-bottom">
                         <div className="banner-item">

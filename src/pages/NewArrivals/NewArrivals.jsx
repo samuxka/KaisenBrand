@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import Footer from "../../Components/Footer/Footer"
 import Navbar from "../../Components/NavBar/Navbar"
-import produtos from "../../data/produtos"
 
 import './NewArrival.css'
 

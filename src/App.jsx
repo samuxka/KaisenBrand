@@ -1,4 +1,5 @@
 import './App.css'
+// require('dotenv').config()
 
 // import Navbar from './Components/NavBar/Navbar'
 import Home from './pages/Home/Home'

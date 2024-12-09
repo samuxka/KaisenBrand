@@ -2,9 +2,6 @@ import Navbar from '../../Components/NavBar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import { Link } from 'react-router-dom'
 
-import categories from '../../data/categories'
-
-
 function Categories() {
     return(
         <>

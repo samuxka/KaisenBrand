@@ -24,7 +24,7 @@
 
 :root{
     --black: #161816;
-    --white: #f0f8ff;
+    --white: #fafbfd;
     --text-hover: #fc3838;
     --grey: #cccccc;
 }
@@ -45,6 +45,10 @@ section{
     width: 100%;
     height: auto;
     display: flex;
+}
+
+body{
+    background: var(--white);
 }
 
 body::-webkit-scrollbar {

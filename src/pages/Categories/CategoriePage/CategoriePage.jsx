@@ -1,7 +1,6 @@
 import Footer from '../../../Components/Footer/Footer'
 import Navbar from '../../../Components/NavBar/Navbar'
-import categories from '../../../data/categories'
-import produtos from '../../../data/produtos'
+
 import './CategoriePage.css'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'

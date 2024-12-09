@@ -2,8 +2,6 @@ import { useParams } from 'react-router-dom';
 import Navbar from '../../../Components/NavBar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import { Link } from 'react-router-dom';
-import produtos from '../../../data/produtos';
-import colecoes from '../../../data/colecoes';
 
 import './CollectionPage.css'
 
