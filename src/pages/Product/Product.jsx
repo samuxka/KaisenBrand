@@ -84,33 +84,37 @@ const Product = () => {
             setIsColorDropdownOpen(false);
         }
     };
-
     useEffect(() => {
-        carregarProduto();
-        carregarVariações();
-
-        const handleClickOutside = (event) => {
-            if (sizeDropdownRef.current && !sizeDropdownRef.current.contains(event.target)) {
-                setIsSizeDropdownOpen(false);
-            }
-            if (colorDropdownRef.current && !colorDropdownRef.current.contains(event.target)) {
-                setIsColorDropdownOpen(false);
-            }
+        const fetchAllData = async () => {
+            await carregarProduto();
+            await carregarVariações();
         };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
+    
+        fetchAllData();
     }, [productId]);
 
     useEffect(() => {
-        if (product && product.collection_id !== undefined && product.collection_id !== null) {
-          fetchRelatedProducts(product.collection_id).then((produtos) => setRelatedProducts(produtos));
-        }
-      }, [product]);
+        const fetchRelated = async () => {
+            if (product.collection_id) {
+                const produtos = await fetchRelatedProducts(product.collection_id);
+                setRelatedProducts(produtos);
+            }
+        };
+    
+        fetchRelated();
 
-      
+        const handleClickOutside = (event) => {
+            if (!sizeDropdownRef.current?.contains(event.target)) {
+                setIsSizeDropdownOpen(false);
+            }
+            if (!colorDropdownRef.current?.contains(event.target)) {
+                setIsColorDropdownOpen(false);
+            }
+        };
+    
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [product.collection_id]);
 
     return (
         <>
@@ -275,7 +279,8 @@ const Product = () => {
                             </div>
                         </div>
                     </div>
-                    <Recomendations relatedProducts={relatedProducts}/>
+                    <Recomendations products={relatedProducts} currentProduct={product} />
+                    {/* <Recomendations relatedProducts={relatedProducts}/> */}
                 </div>
             </section>
             <Footer />

@@ -3,16 +3,17 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
+import { Link } from 'react-router-dom';
 
-const Recomendations = ({ relatedProducts, currentProductId }) => {
-    console.log('RelatedProducts:', relatedProducts);
-
-    if (!Array.isArray(relatedProducts) || relatedProducts.length === 0) {
-        return <div>Nenhum produto relacionado encontrado.</div>;
-    }
-
-    const filteredProducts = relatedProducts.filter(
-        (product) => product.id !== currentProductId
+const Recomendations = ({ products, currentProduct }) => {
+    // console.log('RelatedProducts:', relatedProducts);
+    
+    // if (!Array.isArray(relatedProducts) || relatedProducts.length === 0) {
+    //     return <div>Nenhum produto relacionado encontrado.</div>;
+    // }
+    
+    const filteredProducts = products.filter(
+        (product) => product.id !== currentProduct.id
     );
 
     if (filteredProducts.length === 0) {
@@ -39,13 +40,15 @@ const Recomendations = ({ relatedProducts, currentProductId }) => {
                             .slice(0, 5)
                             .map((product) => (
                                 <SwiperSlide key={product.id}>
-                                    <div className='card'>
-                                        <div className="img">
-                                            <img src={product.image_url_front} alt={product.name} />
+                                    <Link to={`/Product/${product.id}`}>
+                                        <div className='card'>
+                                            <div className="img">
+                                                <img src={product.image_url_front} alt={product.name} />
+                                            </div>
+                                            <h2>{product.name}</h2>
+                                            <p>$ {product.price}</p>
                                         </div>
-                                        <h2>{product.name}</h2>
-                                        <p>$ {product.price}</p>
-                                    </div>
+                                    </Link>
                                 </SwiperSlide>
                             ))}
                     </Swiper>

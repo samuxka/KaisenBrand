@@ -457,6 +457,7 @@
 }
 .more-content .other-products-cards .card h2,
 .more-content .other-products-cards .card p{
+    color: var(--black);
     transition: .3s;
 }
 .more-content .other-products-cards .card:hover h2,
