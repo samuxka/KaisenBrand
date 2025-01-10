@@ -126,10 +126,9 @@ const Product = () => {
                         <div className="product__area-info">
                             <div className="info__area-head">
                                 <h3>
-                                    <Link to="/">Home</Link> /
-                                    <Link to='/Collections/:collectionId'> {product.collection} </Link> /
-                                    <Link to={`/${product.category}`}> {product.category} </Link> /
-                                    {product.name}
+                                    <Link to="/">Home</Link> / <Link to='/Collections/:collectionId'> {product.collection} </Link> /
+                                    <Link to={`/${product.category}`}> {product.category} </Link>  /
+                                     {product.name}
                                 </h3>
                             </div>
                             <div className="info__area-middle">
