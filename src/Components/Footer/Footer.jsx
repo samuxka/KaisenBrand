@@ -47,7 +47,7 @@ function Footer() {
                             </nav>
                         </div>
                         <div className="copyright">
-                            <p>Copyright <i className="uil uil-copyright"></i> 2024 Kaisen Brand. Powered by <a href="https://instagram.com/sso_webflow" target='_blank'>SSO - Webflow</a></p>
+                            <p>Copyright <i className="uil uil-copyright"></i> 2024 Kaisen Brand. Powered by <a href="https://instagram.com/sso_webflow" target='_blank'>SMXK</a></p>
                         </div>
                     </div>
                 </div>
